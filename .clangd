@@ -1,0 +1,8 @@
+# cc on mac is apple clang, editor clangd is llvm clangd,
+# strip apple-only flags it doesnt understand
+CompileFlags:
+  Remove:
+    - -Xclang
+    - -clang-vendor-feature=*
+    - -fno-odr-hash-protocols
+    - -mlinker-version=*
